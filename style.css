@@ -1,0 +1,346 @@
+/*---------------------
+  Universal CSS
+-----------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "League Spartan", sans-serif;
+}
+
+/* if we didnot use this we will not be able to center the card verically. */
+html, body {
+  height: 100%;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/*----------------
+  Primary Colors
+-----------------*/
+
+:root {
+  --color-dark-magenta: hsl(300, 43%, 22%);
+  --color-soft-pink: hsl(333, 80%, 67%);
+}
+
+.color-dark-magenta{
+  color: var(--color-dark-magenta);
+}
+
+.color-soft-pink{
+  color: var(--color-soft-pink);
+}
+
+.bg-color-dark-magenta{
+  background-color: var(--color-dark-magenta);
+}
+
+.bg-color-soft-pink{
+  background-color: var(--color-soft-pink);
+}
+
+/*----------------
+  Neutral Colors
+-----------------*/
+
+:root {
+  --color-dark-greyish-magenta: hsl(303, 10%, 53%);
+  --color-light-greyish-magenta: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+.color-dark-greyish-magenta{
+  color: var(--color-dark-greyish-magenta);
+}
+
+.color-light-greyish-magenta{
+  color: var(--color-light-greyish-magenta);
+}
+
+.color-white{
+  color: var(--color-white);
+}
+
+.bg-color-dark-greyish-magenta{
+  background-color: var(--color-dark-greyish-magenta);
+}
+
+.bg-color-light-greyish-magenta{
+  background-color: var(--color-light-greyish-magenta);
+}
+
+.bg-color-white{
+  background-color: var(--color-white);
+}
+
+
+
+/*--------
+  Body
+--------*/
+
+.wrapper{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+.bg-top-pattern{
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+}
+
+.bg-bottom-pattern{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.bg-right-pattern{
+  position: absolute;
+  right: 0;
+}
+
+.text-stars{
+  margin-top: 70px;
+}
+
+.text{
+  text-align: center;
+}
+
+.text-heading{
+  color: var(--color-dark-magenta);
+  font-size: 2.2em;
+  font-weight: 700;
+  letter-spacing: -2px;
+  padding-inline: 1em;
+}
+
+.text-description{
+  margin-top: 20px;
+  line-height: 1.5rem;
+  color: var(--color-dark-greyish-magenta);
+  font-weight: 500;
+}
+
+.star-cards{
+  margin-top: 35px;
+}
+
+.star-card{
+  text-align: center;
+  padding: 15px 0;
+  background-color: var(--color-light-greyish-magenta);
+  border-radius: 7px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stars{
+  display: inline-flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.stars img{
+  width: 16px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.star-card-text{
+  color: var(--color-dark-magenta);
+  font-weight: 700;
+  margin-top: 13px;
+  font-size: 17px;
+}
+
+/* Testimonials  */
+
+.testimonials{  
+  margin-top: 55px;
+  padding-bottom: 55px;;
+}
+
+.testimonial{
+  background-color: var(--color-dark-magenta);
+  color: var(--color-white);
+  padding: 40px;
+  border-radius: 7px;
+}
+
+.testimonial:not(:first-child){
+  margin-top: 15px;
+}
+
+.testimonial-data{
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-img{
+  width: 50px;
+  border-radius: 50%;
+}
+
+.testimonial-about{
+  margin-left: 20px;
+}
+
+.testimonial-name{
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.testimonial-status{
+  color: var(--color-soft-pink);
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.testimonial-text{
+  margin-top: 30px;
+  line-height: 1.5rem;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+
+/*----------------
+  Media Queries
+-----------------*/
+
+
+/* from 700px */
+@media screen and (min-width: 700px) {
+
+  .text-stars{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 35% 60%;
+  }
+
+  .text{
+    text-align: left;
+  }
+
+  .text-heading{
+    padding-inline: 0 1.5em;
+    font-size: 3em;
+  }
+
+  .star-cards{
+    margin-top: 0;
+  }
+
+  .star-card{
+  display:inline-flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 22px 30px;
+  align-items:center;
+  }
+
+  .star-card-text{
+    margin-top: 0px;
+    margin-left: 25px;
+  }
+
+  .star-card:nth-child(2){
+    margin-left: 50px;
+  }
+
+  .star-card:nth-child(3){
+    margin-left: 100px;
+  }
+
+  .testimonials{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2,1fr);
+    /* margin-top: 75px; */
+  }
+
+  .testimonial:not(:first-child){
+    margin-top: 0;
+  }
+
+  
+}
+
+
+/* from 1000px */
+@media screen and (min-width: 1000px) {
+
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrapper{
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1500px;
+  }
+  
+  .text-heading{
+    font-size: 3.5em;
+  }
+
+  .text-stars{
+    grid-template-columns: 40% 50%;
+  }
+
+  .testimonials{
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 95px;
+
+  }
+  
+  .testimonial:nth-child(2){
+    margin-top: 18px;
+  }
+
+  .testimonial:nth-child(3){
+    margin-top: 36px;
+  }
+
+  .text-description{
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+}
